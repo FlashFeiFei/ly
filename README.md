@@ -21,7 +21,9 @@
 ## 运行流程
 
 ### 开启服务发现consul
-
+想要修改consul里面的代码可以参考以下链接
+-  [golang使用服务发现系统consul](https://gocn.vip/article/349)
+- [consul具体如何注册一个服务，如何找到一个服务](https://github.com/changjixiong/goNotes/tree/master/consulnotes) 
 ```
 consul agent -dev
 ```
