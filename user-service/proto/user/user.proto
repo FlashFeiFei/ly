@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package user;
+
+service User {
+    rpc CreateUser (UserInfo) returns (Result);
+}
+
+
+message UserInfo {
+    string name = 1;
+    string sex = 2;
+}
+
+
+message Result {
+    string result = 1;
+    UserInfo user_info = 2;
+}
