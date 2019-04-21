@@ -1,0 +1,14 @@
+version: '3'
+services:
+    ly-finance-server:
+        image: golang:1.8
+        container_name: ly-finance-server
+        network_mode: consul_ly
+        volumes:
+            - ./bin:/go/bin
+        ports:
+            - 8081:8081
+            - 50052:50052
+        external_links:
+            - consul_ly_client
+        command: /bin/bash -c 'cd /go/bin/ && chmod a+x ./micro && ./micro'

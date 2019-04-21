@@ -29,6 +29,7 @@ func main() {
 
 	//从consul服务发现中获取userServerNode的地址
 	conn_address := ly_consul.GetServiceConnect("userServerNode")
+	log.Println(conn_address)
 	// 创建连接，没有经过tls加密
 	conn, err := grpc.Dial(conn_address, grpc.WithInsecure())
 

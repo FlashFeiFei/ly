@@ -8,7 +8,9 @@ import (
 
 //获取服务的链接地址
 func GetServiceConnect(serviceID string) string {
-	client, err := consulapi.NewClient(consulapi.DefaultConfig())
+	consul_config := consulapi.DefaultConfig()
+	consul_config.Address = "118.25.8.93:8500"
+	client, err := consulapi.NewClient(consul_config)
 	if err != nil {
 		log.Fatal("consul 客户端client出错: ", err)
 	}

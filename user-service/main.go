@@ -94,7 +94,7 @@ func registerServer() {
 	registration.Name = "userServer"
 	registration.Port = grpc_service_port
 	registration.Tags = []string{"serverNode"}
-	registration.Address = "127.0.0.1"
+	registration.Address = "118.25.8.93"
 	//自己封装了一下定时检查的脚本
 	ly_consul.RegisterServer(consul_check_port, registration)
 }

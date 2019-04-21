@@ -1,0 +1,14 @@
+version: '3'
+services:
+    ly-user-server:
+        image: golang:1.8
+        container_name: ly-user-server
+        network_mode: consul_ly
+        volumes:
+            - ./bin:/go/bin
+        ports:
+            - 8080:8080
+            - 50051:50051
+        external_links:
+            - consul_ly_client
+        command: /bin/bash -c 'cd /go/bin/ && chmod a+x ./micro && ./micro'

@@ -10,6 +10,7 @@ import (
 //把服务，注册到服务发现中
 func RegisterServer(consul_check_port int, registration *consulapi.AgentServiceRegistration) {
 	config := consulapi.DefaultConfig()
+	config.Address = "consul_ly_client:8500"
 	client, err := consulapi.NewClient(config)
 
 	if err != nil {
