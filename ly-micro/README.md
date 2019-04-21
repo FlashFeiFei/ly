@@ -32,7 +32,7 @@ golang 的镜像是docker.hub
 
 ## 在windows中构建交叉编译Linux的代码
 
-编译充值服务
+编译财务服务
 
 ```
 /finance-service/go-build.bat
