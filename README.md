@@ -55,3 +55,8 @@ go run client/queryfinance.go -name 小明
 
 
 
+# 在windows中交叉编译linux可执行文件，在centos中搭建运行环境
+
+具体操作请查看 ly-micro的README.MD
+
+

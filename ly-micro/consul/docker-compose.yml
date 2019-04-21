@@ -1,0 +1,16 @@
+version: '3'
+services:
+  consul_ly_service:
+    image: consul:latest
+    container_name: consul_ly_service
+    restart: always
+    network_mode: consul_ly
+    command: agent -server -client=0.0.0.0 -bootstrap-expect=1 -node=consul_ly_service
+  consul_ly_client:
+    image: consul:latest
+    container_name: consul_ly_client
+    network_mode: consul_ly
+    restart: always
+    ports:
+    - 8500:8500
+    command: agent -client=0.0.0.0 -retry-join=consul_ly_service -ui -node=consul_ly_client
